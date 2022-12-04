@@ -21,6 +21,7 @@ def create_app(config_class=Config):
     bcrypt.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
+    db.init_app(app)
 
     from blog.users.routes import users
     from blog.posts.routes import posts
@@ -28,6 +29,6 @@ def create_app(config_class=Config):
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
-    db.init_app(app)
+    
 
     return app
