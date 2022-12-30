@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for cards in hands %}
+    {{ cards'}}
+<img src="{{ url_for('static', filename=f'images/cards/ + {card}.png') }}", width='90', height='120' alt="User Image">
+{% endfor %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.play(class="btn btn-outline-info") }}
+        </div>
+        <div class="form-group">
+            {{ form.play_again(class="btn btn-outline-info") }}
+        </div>
+        <div class="form-group">
+            {{ form.quit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}
